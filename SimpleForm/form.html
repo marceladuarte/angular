@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="simpleForm" ng-controller="formController" class="w3-container w3-third">
+
+<form novalidate >
+Nome:<br>
+<input type="text" ng-model="name" class="w3-input w3-border"><br>
+Sobrenome:<br>
+<input type="text" ng-model="lastname" class="w3-input w3-border"> <br>
+Idade:<br>
+<input type="number" ng-model="age" class="w3-input w3-border"><br>
+E-mail:<br>
+<input type="text" ng-model="email" class="w3-input w3-border"><br><br>
+<button ng-click="save()" class="w3-btn w3-green w3-ripple">Save</button>
+
+</form>
+<br>
+
+<table class="w3-table w3-bordered w3-striped">
+  <tr>
+    <td>NAME</td>
+    <td>LASTNAME</td>
+  </tr>
+  <tr ng-repeat="x in users">
+    <td>{{x.name}}</td>
+    <td>{{x.lastname}}</td>
+  </tr>
+</table>
+
+
+
+<script src="formController.js"></script>
+
+</div>
+
+</body>
+</html>
