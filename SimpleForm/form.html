@@ -17,15 +17,15 @@
         <td>EMAIL</td>
         <td></td>
       </tr>
-      <tr ng-repeat="x in users">
-        <td>{{x.name}}</td>
-        <td>{{x.lastname}}</td>
-        <td>{{x.age}}</td>
-        <td>{{x.email}}</td>
-        <td><button>
+      <tr ng-repeat="customer in customers">
+        <td>{{customer.name}}</td>
+        <td>{{customer.lastname}}</td>
+        <td>{{customer.age}}</td>
+        <td>{{customer.email}}</td>
+        <td><button ng-click="edit(customer.id)">
           <i class="glyphicon glyphicon-pencil"></i>
           </button></td>
-        <td><button>
+        <td><button ng-click="confirmRemove(customer.id)">
           <i class="glyphicon glyphicon-remove"></i>
           </button>
         </td>
