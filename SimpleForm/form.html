@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
 <div ng-app="simpleForm" ng-controller="formController" class="w3-container w3-third">
 
-<form novalidate >
-Name:<br>
-<input type="text" ng-model="name" class="w3-input w3-border"><br>
-Lastname:<br>
-<input type="text" ng-model="lastname" class="w3-input w3-border"> <br>
-Age:<br>
-<input type="number" ng-model="age" class="w3-input w3-border"><br>
-E-mail:<br>
-<input type="text" ng-model="email" class="w3-input w3-border"><br><br>
-<button ng-click="save()" class="w3-btn w3-green w3-ripple">Save</button>
+  <h3>Customer's List</h3>
+  <div class="w3-container">
+    <table class="w3-table w3-bordered w3-striped">
+      <tr>
+        <td>NAME</td>
+        <td>LASTNAME</td>
+        <td>AGE</td>
+        <td>EMAIL</td>
+        <td></td>
+      </tr>
+      <tr ng-repeat="x in users">
+        <td>{{x.name}}</td>
+        <td>{{x.lastname}}</td>
+        <td>{{x.age}}</td>
+        <td>{{x.email}}</td>
+        <td><button>
+          <i class="glyphicon glyphicon-pencil"></i>
+          </button></td>
+        <td><button>
+          <i class="glyphicon glyphicon-remove"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
 
-</form>
-<br>
+  <br><br><br>
 
-<table class="w3-table w3-bordered w3-striped">
-  <tr>
-    <td>NAME</td>
-    <td>LASTNAME</td>
-  </tr>
-  <tr ng-repeat="x in users">
-    <td>{{x.name}}</td>
-    <td>{{x.lastname}}</td>
-  </tr>
-</table>
+  <h3>New Customer</h3>
+  <form class="w3-container w3-card-5 w3-light-grey" novalidate >
 
+    Name:<br>
+    <input type="text" ng-model="name" class="w3-input w3-border "><br>
 
+    Lastname:<br>
+    <input type="text" ng-model="lastname" class="w3-input w3-border"> <br>
 
-<script src="formController.js"></script>
+    Age:<br>
+    <input type="number" ng-model="age" class="w3-input w3-border"><br>
+
+    E-mail:<br>
+    <input type="text" ng-model="email" class="w3-input w3-border"><br>
+
+    <button ng-click="save()" class="w3-btn w3-green w3-ripple">Save</button>
+
+  </form>
+  <br>
+
+  <script src="formController.js"></script>
 
 </div>
 
